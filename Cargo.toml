@@ -1,0 +1,11 @@
+[package]
+name = "zorro_cli"
+version = "0.1.0"
+authors = ["chrisftw","roxannedunn"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+lapp = "0.4.0"
+zorro = {path = "../zorro"}
