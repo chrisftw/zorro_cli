@@ -9,7 +9,7 @@ fn main() {
         -o, --output    (default 'out.png')
         -d, --decode
         -e, --encode
-        -f, --filepath
+        -f, --filepath  (default '')
         <input>         (default 'stdin')
     ");
     let do_decode = args.get_bool("decode");
@@ -19,16 +19,16 @@ fn main() {
     let output = args.get_string("output");
     let filepath = args.get_string("filepath");
     if do_decode {
-        if output {
-            zorro::zorro::decode_to_file(&input, &output, &mode);
+        if output.len() > 0 {
+            zorro::decode_to_file(&input, &output, &mode);
         } else {
-            println!("{:?}", zorro::zorro::decode(&input, &mode));
+            println!("{:?}", zorro::decode(&input, &mode));
         }
     } else {
-        if filepath {
-            zorro::zorro::encode_from_file(&filepath, &output, &mode);
+        if filepath.len() > 0 {
+            zorro::encode_from_file(&filepath, &output, &mode);
         } else {
-            zorro::zorro::encode(&input, &output, &mode);
+            zorro::encode(&input, &output, &mode);
         }
     }
 }
