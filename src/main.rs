@@ -20,9 +20,9 @@ fn main() {
     let filepath = args.get_string("filepath");
     if do_decode {
         if output.len() > 0 {
-            zorro::decode_to_file(&input, &output, &mode);
+            zorro::decode_to_file(&input, &output);
         } else {
-            println!("{:?}", zorro::decode(&input, &mode));
+            println!("{:?}", zorro::decode(&input));
         }
     } else {
         if filepath.len() > 0 {
